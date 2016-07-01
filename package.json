@@ -87,6 +87,10 @@
     "preversion": "npm run test && npm run build && git push",
     "postversion": "git push && git push --tags"
   },
+  "dist": {
+    "shasum": "667c73979b8065d1a59fb59d5e8178c6b510a2ce",
+    "tarball": "https://github.com/adyz/i18next/tree/master"
+  },
   "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
   "license": "MIT"
 }
