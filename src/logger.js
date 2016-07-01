@@ -2,19 +2,19 @@ const consoleLogger = {
   type: 'logger',
 
   log(args) {
-    this._output('log', args);
+    //this._output('log', args);
   },
 
   warn(args) {
-    this._output('warn', args);
+    //this._output('warn', args);
   },
 
   error(args) {
-    this._output('error', args);
+    //this._output('error', args);
   },
 
   _output(type, args) {
-    if (console && console[type]) console[type].apply(console, Array.prototype.slice.call(args));
+    //if (console && console[type]) console[type].apply(console, Array.prototype.slice.call(args));
   }
 };
 
@@ -33,39 +33,39 @@ class Logger {
   }
 
   setDebug(bool) {
-    this.debug = bool;
+    //this.debug = bool;
     this.subs.forEach(sub => {
-      sub.setDebug(bool);
+      //sub.setDebug(bool);
     });
   }
 
   log() {
-    this.forward(arguments, 'log', '', true);
+    ///this.forward(arguments, 'log', '', true);
   }
 
   warn() {
-    this.forward(arguments, 'warn', '', true);
+    //this.forward(arguments, 'warn', '', true);
   }
 
   error() {
-    this.forward(arguments, 'error', '');
+    //this.forward(arguments, 'error', '');
   }
 
   deprecate() {
-    this.forward(arguments, 'warn', 'WARNING DEPRECATED: ', true);
+    //this.forward(arguments, 'warn', 'WARNING DEPRECATED: ', true);
   }
 
   forward(args, lvl, prefix, debugOnly) {
-    if (debugOnly && !this.debug) return;
-    if (typeof args[0] === 'string') args[0] = prefix + this.prefix + ' ' + args[0];
-    this.logger[lvl](args);
+    // if (debugOnly && !this.debug) return;
+    // if (typeof args[0] === 'string') args[0] = prefix + this.prefix + ' ' + args[0];
+    // this.logger[lvl](args);
   }
 
   create(moduleName) {
-    let sub = new Logger(this.logger, {...{prefix: this.prefix + ':' + moduleName + ':'}, ...this.options});
-    this.subs.push(sub);
+    //let sub = new Logger(this.logger, {...{prefix: this.prefix + ':' + moduleName + ':'}, ...this.options});
+    //this.subs.push(sub);
 
-    return sub;
+    //return sub;
   }
 
   // createInstance(options = {}) {
